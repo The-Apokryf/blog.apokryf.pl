@@ -37,14 +37,15 @@ tasks:
       # - git submodule foreach git pull
       - git fetch
       - git pull
-      - echo "TASK ROUTINES:LAZYSYNC  with timestamp = $( date +%s )" > I_AM_LAZY
+      - touch I_AM_LAZY_$( date +%s )
+      #- echo "TASK ROUTINES:LAZYSYNC  with timestamp = $( date +%s )" > I_AM_LAZY
       - git add .
       - git commit -m "autosync timestamp = $( date +%s )" 2>/dev/null
       - git push
       - git submodule foreach git fetch
       - git submodule foreach git pull
       - git submodule foreach touch I_AM_LAZY_$( date +%s )
-      - git submodule foreach wget https://api.github.com/zen
+      #- git submodule foreach wget https://api.github.com/zen
       #- git submodule foreach echo "TASK ROUTINES:LAZYSYNC  with timestamp = $( date +%s )" > I_AM_LAZY
       - git submodule foreach git add .
       - git submodule foreach git commit -m "submodules autosync with timestamp = $( date +%s )" 2>/dev/null
