@@ -45,6 +45,9 @@ tasks:
       - git submodule foreach git add .
       - git submodule foreach git commit -m "submodules autosync with timestamp = $( date +%s )" 2>/dev/null
       - git submodule foreach git push
+      - git add .
+      - git commit -m "cumulation of syncing by lazysync routine task, timestamp = $( date +%s )" 2>/dev/null
+      - git push
   default:
     cmds:
       - npm i
