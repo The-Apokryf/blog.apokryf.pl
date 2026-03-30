@@ -1,0 +1,24 @@
+{
+  "name": "blog.apokryf.pl",
+  "version": "1.0.0",
+  "description": "blogger template for blog by inceptorium apokryf",
+  "keywords": [
+    "apokryf",
+    "blogger"
+  ],
+  "homepage": "https://github.com/The-Apokryf/apokryf-institute.blogspot.com#readme",
+  "bugs": {
+    "url": "https://github.com/The-Apokryf/apokryf-institute.blogspot.com/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Apokryf/apokryf-institute.blogspot.com.git"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Sett Sarverott",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "task test"
+  }
+}
