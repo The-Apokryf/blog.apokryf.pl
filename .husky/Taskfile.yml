@@ -1,0 +1,21 @@
+
+# https://taskfile.dev
+
+version: '3'
+
+
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - npm i
+      - npm i -D
+      - task --list-all
+    silent: true
+  precommit:
+    cmds:
+      - pwd
+      - echo "precommit routine"
