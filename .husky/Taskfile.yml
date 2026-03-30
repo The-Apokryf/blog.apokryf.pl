@@ -38,12 +38,12 @@ tasks:
       - git fetch
       - git pull
       - git add .
-      - git commit -m "autosync"
+      - git commit -m "autosync timestamp = $( date +%s )" 2>/dev/null
       - git push
       - git submodule foreach git fetch
       - git submodule foreach git pull
       - git submodule foreach git add .
-      - git submodule foreach git commit -m "autosync"
+      - git submodule foreach git commit -m "submodules autosync with timestamp = $( date +%s )" 2>/dev/null
       - git submodule foreach git push
   default:
     cmds:
