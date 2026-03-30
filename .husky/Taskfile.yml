@@ -3,7 +3,10 @@
 
 version: '3'
 
-
+includes:
+  husk:
+    flatten: true
+    taskfile: ./husky.Taskfile.yml
 
 vars:
   GREETING: Hello, World!
@@ -59,8 +62,7 @@ tasks:
       - npm i -D
       - task --list-all
     silent: true
-  pre-commit:
-    desc: routine before commiting by ".husky/pre-commit"
-    summary: routine script before commiting 
-    cmds:
-      - echo "routine before commiting"
+  
+  
+
+# python -c 'import toml ; [print("echo \"task routines:\\\$(basename \\\$0 )\" > ./.husky/"+x) for x in toml.load(".husky/.omnis.toml")["HUSKY_SCRIPTS"]]' | sh

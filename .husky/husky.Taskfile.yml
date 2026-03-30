@@ -1,0 +1,42 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  pre-commit:
+    desc: routine before commiting by ".husky/pre-commit"
+    summary: routine script before commiting 
+    cmds:
+      - echo "routine before commiting"
+
+  post-commit:
+    desc: routine before commiting by ".husky/post-commit"
+    summary: routine script before commiting 
+    cmds:
+      - echo "routine after commiting"
+
+  prepare-commit-msg:
+    desc: routine before commiting by ".husky/prepare-commit-msg"
+    summary: routine script before commiting 
+    cmds:
+      - echo "routine mesage commit preparing"
+
+  commit-msg:
+    desc: routine before commiting by ".husky/commit-msg"
+    summary: routine script before commiting 
+    cmds:
+      - echo "routine of commit message"
+
+  pre-push:
+    desc: routine before commiting by ".husky/pre-commit"
+    summary: routine script before commiting 
+    cmds:
+      - echo "routine before push"
+
+  # pre-rebase:
+  #   desc: routine before commiting by ".husky/pre-commit"
+  #   summary: routine script before commiting 
+  #   cmds:
+  #     - echo "routine before commiting"
+  
