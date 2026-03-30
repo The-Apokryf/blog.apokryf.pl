@@ -1,0 +1,7 @@
+[project]
+name = "blog.apokryf.pl"
+version = "0.1.0"
+description = "blogger template for blog by inceptorium apokryf"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []

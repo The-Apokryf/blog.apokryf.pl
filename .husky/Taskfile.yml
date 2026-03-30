@@ -9,6 +9,42 @@ vars:
   GREETING: Hello, World!
 
 tasks:
+  statedev: 
+    cmds:
+      - echo "# SYNC STATUS" > ./docs/devlog/sync-status.md
+      - echo " > `timestamp = $( date +%s )`" >> ./docs/devlog/sync-status.md
+      - echo "---" >> ./docs/devlog/sync-status.md
+      - echo "```md" >> ./docs/devlog/sync-status.md
+      - gh repo view >> ./docs/devlog/sync-status.md
+      - echo "```" >> ./docs/devlog/sync-status.md
+      - echo "---" >> ./docs/devlog/sync-status.md
+      - git status >> ./docs/devlog/sync-status.md
+      - echo "---" >> ./docs/devlog/sync-status.md
+      - git submodule status  >> ./docs/devlog/sync-status.md
+      - echo "---" >> ./docs/devlog/sync-status.md
+      - git submodule foreach git status >> ./docs/devlog/sync-status.md
+      - echo "---" >> ./docs/devlog/sync-status.md
+      - echo "```" >> ./docs/devlog/sync-status.md
+      - git log >> ./docs/devlog/sync-status.md
+      - echo "```" >> ./docs/devlog/sync-status.md
+      - echo " > `timestamp = $( date +%s )`" >> ./docs/devlog/sync-status.md
+  
+  lazysync:
+    cmds:
+      # - git fetch
+      # - git submodule foreach git fetch
+      # - git pull
+      # - git submodule foreach git pull
+      - git fetch
+      - git pull
+      - git add .
+      - git commit -m "autosync"
+      - git push
+      - git submodule foreach git fetch
+      - git submodule foreach git pull
+      - git submodule foreach git add .
+      - git submodule foreach git commit -m "autosync"
+      - git submodule foreach git push
   default:
     cmds:
       - npm i
@@ -16,5 +52,7 @@ tasks:
       - task --list-all
     silent: true
   pre-commit:
+    desc: routine before commiting by ".husky/pre-commit"
+    summary: routine script before commiting 
     cmds:
-      - echo "precommit routine"
+      - echo "routine before commiting"
