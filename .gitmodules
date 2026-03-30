@@ -1,0 +1,3 @@
+[submodule "github_wiki"]
+	path = docs/repowiki
+	url = https://github.com/The-Apokryf/blog.apokryf.pl.wiki.git
