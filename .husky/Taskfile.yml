@@ -15,7 +15,6 @@ tasks:
       - npm i -D
       - task --list-all
     silent: true
-  precommit:
+  pre-commit:
     cmds:
-      - pwd
       - echo "precommit routine"
